@@ -1,12 +1,12 @@
 import {render, screen, cleanup} from '@testing-library/react';
 import React from 'react';
-import Screen from "../screen";
+import Card from "../card";
 
 describe('Main page mount', () => {
 
     it("must display the main page title", () => {
-        render(<Screen/>);
-        expect(screen.getByText("Listado de Pokemon")).toBeInTheDocument()
+        render(<Card/>);
+        expect(screen.getByText("hola")).toBeInTheDocument()
     })
 
 })
