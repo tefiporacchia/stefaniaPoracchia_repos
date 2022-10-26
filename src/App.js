@@ -1,9 +1,9 @@
-
+import Screen from './components/screen/screen';
 function App() {
   return (
-    <div className="App">
-      <span>hello</span>
-    </div>
+    <>
+      <Screen/>
+    </>
   );
 }
 
