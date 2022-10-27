@@ -5,11 +5,6 @@ import {ParentContext} from "../screen/screen";
 import PictureGroup from "../pictureGroup/pictureGroup";
 const InfoCard = ({element}) => {
 
-    //console.log(fromDoubleArrayToCommaSeparated(element?.types,"type","name"))
-
-    /*const { elemForInfo, setElemForInfo } = useContext(ParentContext);
-
-    console.log(elemForInfo)*/
     console.log(element);
 
     const img = element?.sprites?.other?.dream_world?.front_default;

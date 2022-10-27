@@ -1,6 +1,7 @@
 import {render, screen, cleanup} from '@testing-library/react';
 import React from 'react';
 import Card from "../card";
+import renderer from "react-test-renderer";
 
 describe('Main page mount', () => {
 
@@ -14,21 +15,28 @@ describe('Main page mount', () => {
         }
     });
 
-    it("must display the pokemon id", () => {
+    test('renders correctly', () => {
+        const tree = renderer
+            .create(<Card name={pokemon.name} id={pokemon.id} image={pokemon.img} onClick={jest.fn()}/>)
+            .toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+
+    test("must display the pokemon id", async () => {
         render(<Card name={pokemon.name} id={pokemon.id} image={pokemon.img} onClick={jest.fn()}/>);
-        expect(screen.getByText("#03")).toBeInTheDocument();
+        await expect(screen.getByText("#03")).toBeInTheDocument();
     })
 
-    it("must display the pokemon picture", () => {
+    test("must display the pokemon picture", async () => {
         render(<Card name={pokemon.name} id={pokemon.id} image={pokemon.img} onClick={jest.fn()}/>);
         const img = screen.getByRole('img');
         expect(img).toHaveAttribute('src', pokemon.img);
-        expect(img).toHaveAttribute('alt', 'charizard');
+        await expect(img).toHaveAttribute('alt', 'charizard');
     })
 
-    it("must display the pokemon name", () => {
+    test("must display the pokemon name", async () => {
         render(<Card name={pokemon.name} id={pokemon.id} image={pokemon.img} onClick={jest.fn()}/>);
-        expect(screen.getByText("charizard")).toBeInTheDocument()
+        await expect(screen.getByText("Charizard")).toBeInTheDocument()
     })
 
 

@@ -1,0 +1,175 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Group Tests renders correctly 1`] = `
+<div
+  className="card-group"
+>
+  <div
+    className="card-container number-1"
+    onClick={[Function]}
+  >
+    <img
+      alt="charizard"
+      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/2.svg"
+    />
+    <div
+      className="number"
+    >
+      <small>
+        #0
+        1
+      </small>
+    </div>
+    <h3>
+      Charizard
+    </h3>
+  </div>
+  <div
+    className="card-container number-2"
+    onClick={[Function]}
+  >
+    <img
+      alt="woopy"
+      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/43.png"
+    />
+    <div
+      className="number"
+    >
+      <small>
+        #0
+        2
+      </small>
+    </div>
+    <h3>
+      Woopy
+    </h3>
+  </div>
+  <div
+    className="card-container number-3"
+    onClick={[Function]}
+  >
+    <img
+      alt="daisy"
+      src="ttps://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/39.png"
+    />
+    <div
+      className="number"
+    >
+      <small>
+        #0
+        3
+      </small>
+    </div>
+    <h3>
+      Daisy
+    </h3>
+  </div>
+  <div
+    className="card-container number-0"
+    onClick={[Function]}
+  >
+    <img
+      alt="snow"
+      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/39.png"
+    />
+    <div
+      className="number"
+    >
+      <small>
+        #0
+        4
+      </small>
+    </div>
+    <h3>
+      Snow
+    </h3>
+  </div>
+</div>
+`;
+
+exports[`Main page mount renders correctly 1`] = `
+<div
+  className="card-group"
+>
+  <div
+    className="card-container number-1"
+    onClick={[Function]}
+  >
+    <img
+      alt="charizard"
+      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/2.svg"
+    />
+    <div
+      className="number"
+    >
+      <small>
+        #0
+        1
+      </small>
+    </div>
+    <h3>
+      Charizard
+    </h3>
+  </div>
+  <div
+    className="card-container number-2"
+    onClick={[Function]}
+  >
+    <img
+      alt="woopy"
+      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/2.svg"
+    />
+    <div
+      className="number"
+    >
+      <small>
+        #0
+        2
+      </small>
+    </div>
+    <h3>
+      Woopy
+    </h3>
+  </div>
+  <div
+    className="card-container number-3"
+    onClick={[Function]}
+  >
+    <img
+      alt="daisy"
+      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/2.svg"
+    />
+    <div
+      className="number"
+    >
+      <small>
+        #0
+        3
+      </small>
+    </div>
+    <h3>
+      Daisy
+    </h3>
+  </div>
+  <div
+    className="card-container number-0"
+    onClick={[Function]}
+  >
+    <img
+      alt="snow"
+      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/2.svg"
+    />
+    <div
+      className="number"
+    >
+      <small>
+        #0
+        4
+      </small>
+    </div>
+    <h3>
+      Snow
+    </h3>
+  </div>
+</div>
+`;
