@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import "./screen.scss";
 import CardGroup from "../cardGroup/cardGroup";
 import InfoCard from "../infoCard/infoCard";
+import SearchBar from "../searchBar/searchBar";
 
 export const ParentContext = createContext("");
 const Screen = () =>{
@@ -121,7 +122,7 @@ const Screen = () =>{
                         {elementsFromCurrentUrl.map((elem) => {
                             return(<Card id={elem.id} name={elem.name} image={elem.sprites.other.dream_world.front_default}/>)
                         })}*/}
-                        <span className="searchBar">searchbar</span>
+                        <SearchBar/>
                         <CardGroup elems={elementsFromCurrentUrl}/>
                        {/* <SearchBar/>
                         <CardGroup/>
