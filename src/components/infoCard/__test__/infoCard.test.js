@@ -2,7 +2,7 @@ import {render, screen, cleanup} from '@testing-library/react';
 import React from 'react';
 import InfoCard from "../infoCard";
 
-/*
+
 describe('Main page mount', () => {
 
     let pokemon;
@@ -16,21 +16,31 @@ describe('Main page mount', () => {
     });
 
     it("must display the pokemon id", () => {
-        render(<Card name={pokemon.name} id={pokemon.id} image={pokemon.img} onClick={jest.fn()}/>);
+        render(<InfoCard element={pokemon}/>);
         expect(screen.getByText("#03")).toBeInTheDocument();
     })
 
     it("must display the pokemon picture", () => {
-        render(<Card name={pokemon.name} id={pokemon.id} image={pokemon.img} onClick={jest.fn()}/>);
+        render(<InfoCard element={pokemon}/>);
         const img = screen.getByRole('img');
         expect(img).toHaveAttribute('src', pokemon.img);
         expect(img).toHaveAttribute('alt', 'charizard');
     })
 
     it("must display the pokemon name", () => {
-        render(<Card name={pokemon.name} id={pokemon.id} image={pokemon.img} onClick={jest.fn()}/>);
+        render(<InfoCard element={pokemon}/>);
+        expect(screen.getByText("charizard")).toBeInTheDocument()
+    })
+
+    it("must display the pokemon weight", () => {
+        render(<InfoCard element={pokemon}/>);
+        expect(screen.getByText("charizard")).toBeInTheDocument()
+    })
+
+    it("must display the pokemon types", () => {
+        render(<InfoCard element={pokemon}/>);
         expect(screen.getByText("charizard")).toBeInTheDocument()
     })
 
 
-})*/
+})

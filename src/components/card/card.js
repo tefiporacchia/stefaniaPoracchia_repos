@@ -1,9 +1,16 @@
-import React from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import "./card.css";
-const Card = ({id, image, name, onClick}) => {
-    const style = "card-container";
+import {ParentContext} from "../screen/screen";
+const Card = ({id, image, name}) => {
+    const { elemForInfo, setElemForInfo } = useContext(ParentContext);
+
+    const onClick = () => {
+        setElemForInfo(name);
+    };
+
+
     return (
-        <div className={style} onClick={onClick}>
+        <div className="card-container" onClick={onClick}>
             <img src={image} alt={name} />
             <div className="number"><small>#0{id}</small></div>
             <h3>{name}</h3>

@@ -1,17 +1,19 @@
-import React from 'react';
+import React, {createContext} from 'react';
 //import axios from 'axios';
 import { useState } from "react";
 import { useEffect } from "react";
-import Card from "../card/card";
 import "./screen.scss";
 import CardGroup from "../cardGroup/cardGroup";
 import InfoCard from "../infoCard/infoCard";
 
+export const ParentContext = createContext("");
 const Screen = () =>{
 
     const [url,setUrl]=useState("https://pokeapi.co/api/v2/pokemon/?limit=4&offset=0");
     const [elementsFromCurrentUrl, setElementsFromCurrentUrl] = useState([]);
     const [currentOffset, setCurrentOffset] = useState(0);
+    const [elemForInfo, setElemForInfo] = useState("");
+    const [completeElemForInfo, setCompleteElemForInfo] = useState({});
 
     /*const getUrlElements = async () => {
         const res=await axios.get(url);
@@ -79,6 +81,19 @@ const Screen = () =>{
         setUrl("https://pokeapi.co/api/v2/pokemon/?limit=4&offset="+curOffset);
     }
 
+    const getFullElement = async() => {
+        let result;
+        try {
+            const response = await fetch("https://pokeapi.co/api/v2/pokemon/"+elemForInfo,{method:"GET"});
+            const data = await response.json();
+            result = data;
+            console.log(result.sprites.other.dream_world.front_default)
+        } catch (error) {
+            return error;
+        }
+        setCompleteElemForInfo(result);
+    }
+
     useEffect(()=>{
         getUrlElements();
     },[])
@@ -87,11 +102,16 @@ const Screen = () =>{
         getUrlElements();
     },[currentOffset])
 
+    useEffect(()=>{
+        getFullElement();
+    },[elemForInfo])
+
     console.log(elementsFromCurrentUrl)
 
     return (
 
             <div data-testid="screen" className="screen" >
+                <ParentContext.Provider value={{ elemForInfo, setElemForInfo }}>
                 <span className="title" >Listado de Pokemon</span>
                 <div className="container">
                     <div className="left">
@@ -109,14 +129,14 @@ const Screen = () =>{
                         </div>*/}
                     </div>
                     <div className="right">
-                        {elementsFromCurrentUrl.length>0 && <InfoCard element={elementsFromCurrentUrl[0]}/>}
+                        {Object.keys(completeElemForInfo).length !== 0 && <InfoCard element={completeElemForInfo}/>}
                     </div>
                 </div>
                 <div className="buttons">
                     <div><button onClick={subtractOffset} className="buttonForward">Backward</button></div>
                     <div><button onClick={addOffset} className="buttonBackward">Forward</button></div>
-
                 </div>
+                </ParentContext.Provider>
             </div>
     );
 
