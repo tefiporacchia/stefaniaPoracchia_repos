@@ -1,7 +1,8 @@
 import React, {useContext, useEffect} from 'react'
 import "./infoCard.scss";
-import {fromDoubleArrayToCommaSeparated} from "../../helpers";
+import {fromDoubleArrayToCommaSeparated, returnNonNullElements} from "../../helpers";
 import {ParentContext} from "../screen/screen";
+import PictureGroup from "../pictureGroup/pictureGroup";
 const InfoCard = ({element}) => {
 
     //console.log(fromDoubleArrayToCommaSeparated(element?.types,"type","name"))
@@ -24,7 +25,7 @@ const InfoCard = ({element}) => {
                 <span className="attr-title">Weight</span>
                 <span className="subtitle">{element.weight}kg</span>
                 <span className="attr-title">Sprites</span>
-                <span className="subtitle">a,b,c</span>
+                <PictureGroup elems={returnNonNullElements(element.sprites)}/>
                 <span className="attr-title">Movements</span>
                 <span className="subtitle">{fromDoubleArrayToCommaSeparated(element.moves, "move","name" )}</span>
             </div>
