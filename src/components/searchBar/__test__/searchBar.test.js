@@ -26,8 +26,10 @@ describe('SearchBar', () => {
     })
 
     it("must display the word hello", async () => {
-        render(<SearchBar/>);
-        userEvent.type(screen.getByTestId('searchBar'), "hello")
+        const {container} = render(<SearchBar/>);
+        const input = container.querySelector('.input-field');
+        userEvent.clear(input)
+        userEvent.type(input, "hello")
         await waitFor(() => {
             expect(screen.getByTestId('searchBar')).toHaveValue("hello");
         });

@@ -27,13 +27,13 @@ describe('Main page mount', () => {
         expect(card).toBeInTheDocument()
     })
 
-    it("must change cards with arrows", () => {
+    it("has buttons", () => {
         render(<Screen/>);
         const card = screen.getByTestId('card');
         expect(card).toBeInTheDocument()
     })
 
-    it("has buttons", () => {
+    it("must change cards with buttons", () => {
         render(<Screen/>);
         const card = screen.getByTestId('card');
         expect(card).toBeInTheDocument()
