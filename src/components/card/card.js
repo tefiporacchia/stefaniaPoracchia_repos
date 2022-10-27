@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react'
-import "./card.css";
+import "./card.scss";
 import {ParentContext} from "../screen/screen";
 import {toUppercase} from "../../utils/helpers";
 const Card = ({id, image, name}) => {
@@ -9,9 +9,11 @@ const Card = ({id, image, name}) => {
         setElemForInfo(name);
     };
 
+    console.log("number-"+id%4)
 
+    const identifier = "card-container"+ " " + "number-"+id%4
     return (
-        <div className="card-container" onClick={onClick}>
+        <div className={identifier} onClick={onClick}>
             <img src={image} alt={name} />
             <div className="number"><small>#0{id}</small></div>
             <h3>{toUppercase(name)}</h3>

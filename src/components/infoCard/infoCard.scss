@@ -4,17 +4,15 @@
   align-self: center;
 }
 .info-card-container .number {
-  border-radius: 1rem;
-  padding: 0.2rem 0.4rem;
-  background-color: rgba(255,255,255,0.3);
+
 }
 
 .info-card-container{
-  background-color: white;
+  background-color: #b8acfc;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid #efefef;
+  border: 2px solid #867dc0;
   border-radius: 0.2rem;
   width: 500px;
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.089);
@@ -23,7 +21,7 @@
     display: flex;
     flex-direction: column;
     text-align: left;
-    margin-top: 6%;
+    margin-top: 4%;
     margin-left: 20%;
     margin-right: 20%;
     .attr-title{

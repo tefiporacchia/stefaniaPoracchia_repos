@@ -1,0 +1,37 @@
+
+.card-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem 0 ;
+    margin: 0.5rem;
+    border: 1px solid #efefef;
+    border-radius: 0.2rem;
+    width: 205px;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+    .number {
+
+    }
+    img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+.card-container.number-0{
+    background-color: #c8d4dc;
+
+}
+.card-container.number-1{
+    background-color: #76dace;
+}
+.card-container.number-2{
+    background-color: #ffc49c;
+}
+.card-container.number-3{
+
+    background-color: #f89cac;
+}
