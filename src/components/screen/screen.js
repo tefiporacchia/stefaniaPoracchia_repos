@@ -4,6 +4,8 @@ import { useState } from "react";
 import { useEffect } from "react";
 import Card from "../card/card";
 import "./screen.scss";
+import CardGroup from "../cardGroup/cardGroup";
+import InfoCard from "../infoCard/infoCard";
 
 const Screen = () =>{
 
@@ -76,19 +78,21 @@ const Screen = () =>{
                 <span className="title" >Listado de Pokemon</span>
                 <div className="container">
                     <div className="left">
-                        {elementsFromCurrentUrl.map((elem) => {
+                        {/*{elementsFromCurrentUrl.map((elem) => {
                             return(<p key={elem.name}>{elem.name}</p>)
                         })}
                         {elementsFromCurrentUrl.map((elem) => {
                             return(<Card id={elem.id} name={elem.name} image={elem.sprites.other.dream_world.front_default}/>)
-                        })}
+                        })}*/}
+                        <span className="searchBar">searchbar</span>
+                        <CardGroup elems={elementsFromCurrentUrl}/>
                        {/* <SearchBar/>
                         <CardGroup/>
                         <div className="btn-group">
                         </div>*/}
                     </div>
                     <div className="right">
-                        <Card data-testid="card"/>
+                        {elementsFromCurrentUrl.length>0 && <InfoCard element={elementsFromCurrentUrl[0]}/>}
                     </div>
                 </div>
             </div>
