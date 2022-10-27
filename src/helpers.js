@@ -3,12 +3,13 @@ export const fromArrayToCommaSeparated = (arr, property) => {
     return array.join(', ');
 }
 
+
 export const fromDoubleArrayToCommaSeparated = (arr, property1, property2) => {
         console.log(arr);
-        const array = arr?.map(({ property1 }) => property1);
+        const array = arr?.map(a => a[property1]);
         console.log(array);
-        const array2 = array.map(({ property2 }) => property2);
-        return array2.join(', ');
-
+        const array2 = array.map(a => a[property2]);
+        const slicedArray = array2.slice(0,6);
+        return slicedArray.join(', ');
 
 }

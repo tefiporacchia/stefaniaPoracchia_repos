@@ -19,14 +19,14 @@ const InfoCard = ({element}) => {
             <div className="number"><small>#0{element.id}</small></div>
             <h3>{element.name}</h3>
             <div className="extra-attributes">
-                <span>Types</span>
-                {/*<span>{fromDoubleArrayToCommaSeparated(element.types, "type","name" )}</span>*/}
-                <span>Weight</span>
-                <span>{element.weight}</span>
-                <span>Sprites</span>
-                <span>a,b,c</span>
-                <span>Movements</span>
-                <span>a,b,c</span>
+                <span className="attr-title">Types</span>
+                <span className="subtitle">{fromDoubleArrayToCommaSeparated(element.types, "type","name" )}</span>
+                <span className="attr-title">Weight</span>
+                <span className="subtitle">{element.weight}kg</span>
+                <span className="attr-title">Sprites</span>
+                <span className="subtitle">a,b,c</span>
+                <span className="attr-title">Movements</span>
+                <span className="subtitle">{fromDoubleArrayToCommaSeparated(element.moves, "move","name" )}</span>
             </div>
         </div>
     )
