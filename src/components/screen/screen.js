@@ -134,8 +134,8 @@ const Screen = () =>{
                     </div>
                 </div>
                 <div className="buttons">
-                    <div><button onClick={subtractOffset} className="buttonForward">Backward</button></div>
-                    <div><button onClick={addOffset} className="buttonBackward">Forward</button></div>
+                    <div><button onClick={subtractOffset} className="buttonBackward"> Atrás</button></div>
+                    <div><button onClick={addOffset} className="buttonForward">Siguiente</button></div>
                 </div>
                 </ParentContext.Provider>
             </div>

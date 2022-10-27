@@ -18,14 +18,16 @@ const InfoCard = ({element}) => {
             <img src={img} alt={element.name} />
             <div className="number"><small>#0{element.id}</small></div>
             <h3>{element.name}</h3>
-            <h4>Types</h4>
-            <span>a,b,c</span>
-            <h4>Weight</h4>
-            <span>{element.weight}</span>
-            <h4>Sprites</h4>
-            <span>a,b,c</span>
-            <h4>Movements</h4>
-            <span>a,b,c</span>
+            <div className="extra-attributes">
+                <span>Types</span>
+                {/*<span>{fromDoubleArrayToCommaSeparated(element.types, "type","name" )}</span>*/}
+                <span>Weight</span>
+                <span>{element.weight}</span>
+                <span>Sprites</span>
+                <span>a,b,c</span>
+                <span>Movements</span>
+                <span>a,b,c</span>
+            </div>
         </div>
     )
 }
