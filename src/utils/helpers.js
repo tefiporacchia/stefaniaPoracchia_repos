@@ -1,6 +1,5 @@
-export const fromArrayToCommaSeparated = (arr, property) => {
-    const array = arr.map(({ property }) => property);
-    return array.join(', ');
+export const toUppercase = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 

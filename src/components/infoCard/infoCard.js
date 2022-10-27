@@ -1,6 +1,6 @@
 import React, {useContext, useEffect} from 'react'
 import "./infoCard.scss";
-import {fromDoubleArrayToCommaSeparated, returnNonNullElements} from "../../helpers";
+import {fromDoubleArrayToCommaSeparated, returnNonNullElements, toUppercase} from "../../utils/helpers";
 import {ParentContext} from "../screen/screen";
 import PictureGroup from "../pictureGroup/pictureGroup";
 const InfoCard = ({element}) => {
@@ -18,7 +18,7 @@ const InfoCard = ({element}) => {
         <div className="info-card-container">
             <img src={img} alt={element.name} />
             <div className="number"><small>#0{element.id}</small></div>
-            <h3>{element.name}</h3>
+            <h3>{toUppercase(element.name)}</h3>
             <div className="extra-attributes">
                 <span className="attr-title">Types</span>
                 <span className="subtitle">{fromDoubleArrayToCommaSeparated(element.types, "type","name" )}</span>
