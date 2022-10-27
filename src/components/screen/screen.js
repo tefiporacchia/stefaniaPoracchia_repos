@@ -11,7 +11,7 @@ const Screen = () =>{
 
     const [url,setUrl]=useState("https://pokeapi.co/api/v2/pokemon/?limit=4&offset=0");
     const [elementsFromCurrentUrl, setElementsFromCurrentUrl] = useState([]);
-
+    const [currentOffset, setCurrentOffset] = useState(0);
 
     /*const getUrlElements = async () => {
         const res=await axios.get(url);
@@ -65,10 +65,27 @@ const Screen = () =>{
         setElementsFromCurrentUrl(items);
     }
 
+    const addOffset = () => {
+        const curOffset = currentOffset;
+        setCurrentOffset(curOffset+4);
+        const oldUrl = url;
+        setUrl("https://pokeapi.co/api/v2/pokemon/?limit=4&offset="+curOffset);
+    }
+
+    const subtractOffset = () => {
+        const curOffset = currentOffset;
+        setCurrentOffset(currentOffset-4);
+        const oldUrl = url;
+        setUrl("https://pokeapi.co/api/v2/pokemon/?limit=4&offset="+curOffset);
+    }
 
     useEffect(()=>{
         getUrlElements();
     },[])
+
+    useEffect(()=>{
+        getUrlElements();
+    },[currentOffset])
 
     console.log(elementsFromCurrentUrl)
 
@@ -94,6 +111,11 @@ const Screen = () =>{
                     <div className="right">
                         {elementsFromCurrentUrl.length>0 && <InfoCard element={elementsFromCurrentUrl[0]}/>}
                     </div>
+                </div>
+                <div className="buttons">
+                    <div><button onClick={subtractOffset} className="buttonForward">Backward</button></div>
+                    <div><button onClick={addOffset} className="buttonBackward">Forward</button></div>
+
                 </div>
             </div>
     );

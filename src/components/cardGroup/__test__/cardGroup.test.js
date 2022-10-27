@@ -7,25 +7,50 @@ describe('Main page mount', () => {
     let cards;
 
     beforeAll( () => {
+
         cards = [
             {
                 name:'charizard',
-                img:'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/2.svg',
+                sprites: {
+                    other: {
+                        dream_world: {
+                            front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/2.svg',
+                        }
+                    }
+                },
                 id:1
             },
             {
                 name:'woopy',
-                img:'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/2.svg',
+                sprites: {
+                    other: {
+                        dream_world: {
+                            front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/2.svg',
+                        }
+                    }
+                },
                 id:2
             },
             {
                 name:'daisy',
-                img:'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/2.svg',
+                sprites: {
+                    other: {
+                        dream_world: {
+                            front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/2.svg',
+                        }
+                    }
+                },
                 id:3
             },
             {
                 name:'snow',
-                img:'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/2.svg',
+                sprites: {
+                    other: {
+                        dream_world: {
+                            front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/2.svg',
+                        }
+                    }
+                },
                 id:4
             }]
     });

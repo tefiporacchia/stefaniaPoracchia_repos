@@ -33,6 +33,18 @@ describe('Main page mount', () => {
         expect(card).toBeInTheDocument()
     })
 
+    it("has buttons", () => {
+        render(<Screen/>);
+        const card = screen.getByTestId('card');
+        expect(card).toBeInTheDocument()
+    })
+
+    it("Buttons make cards change", () => {
+        render(<Screen/>);
+        const card = screen.getByTestId('card');
+        expect(card).toBeInTheDocument()
+    })
+
 
 
 })
