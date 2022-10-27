@@ -16,7 +16,7 @@ const SearchBar = () => {
     }
 
     return (
-        <div className="search-bar">
+        <div className="search-bar" data-testid="searchBar">
             <i className="fa fa-search"></i>
             <input
                 className="input-field"
