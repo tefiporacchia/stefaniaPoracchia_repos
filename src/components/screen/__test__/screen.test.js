@@ -9,4 +9,30 @@ describe('Main page mount', () => {
         expect(screen.getByText("Listado de Pokemon")).toBeInTheDocument()
     })
 
+    it("must have cards", () => {
+        render(<Screen/>);
+        const card = screen.getByTestId('card');
+        expect(card).toBeInTheDocument()
+    })
+
+    it("must display a big card", () => {
+        render(<Screen/>);
+        const card = screen.getByTestId('card');
+        expect(card).toBeInTheDocument()
+    })
+
+    it("must have a search bar", () => {
+        render(<Screen/>);
+        const card = screen.getByTestId('card');
+        expect(card).toBeInTheDocument()
+    })
+
+    it("must change cards with arrows", () => {
+        render(<Screen/>);
+        const card = screen.getByTestId('card');
+        expect(card).toBeInTheDocument()
+    })
+
+
+
 })

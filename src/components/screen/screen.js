@@ -2,6 +2,8 @@ import React from 'react';
 //import axios from 'axios';
 import { useState } from "react";
 import { useEffect } from "react";
+import Card from "../card/card";
+import "./screen.scss";
 
 const Screen = () =>{
 
@@ -49,13 +51,15 @@ const Screen = () =>{
                 const response = await fetch(item.url,{method:"GET"});
                 const data = await response.json();
                 result = data;
+                console.log(result.sprites.other.dream_world.front_default)
             } catch (error) {
                 return error;
             }
 
             items.push(result);
         }
-        items.sort((a,b) => (a.name.localeCompare(b.name)));
+        //items.sort((a,b) => (a.name.localeCompare(b.name)));
+        items.sort((a,b) => (a.id - b.id));
         setElementsFromCurrentUrl(items);
     }
 
@@ -68,27 +72,24 @@ const Screen = () =>{
 
     return (
 
-            <div data-testid="screen" >
-                <span>Listado de Pokemon</span>
-                <div className="left-content">
-                    {elementsFromCurrentUrl.map((elem) => {
-                        return(<p key={elem.name}>{elem.name}</p>)
-                    })}
-                   {/* <SearchBar/>
-                    <CardGroup/>
-                    <div className="btn-group">
-                        {  prevUrl && <button onClick={()=>{
-                            setPokeData([])
-                            setUrl(prevUrl)
-                        }}>Previous</button>}
-                        { nextUrl && <button onClick={()=>{
-                            setPokeData([])
-                            setUrl(nextUrl)
-                        }}>Next</button>}
-                    </div>*/}
-                </div>
-                <div className="right-content">
-                    {/*<MoreInfo/>*/}
+            <div data-testid="screen" className="screen" >
+                <span className="title" >Listado de Pokemon</span>
+                <div className="container">
+                    <div className="left">
+                        {elementsFromCurrentUrl.map((elem) => {
+                            return(<p key={elem.name}>{elem.name}</p>)
+                        })}
+                        {elementsFromCurrentUrl.map((elem) => {
+                            return(<Card id={elem.id} name={elem.name} image={elem.sprites.other.dream_world.front_default}/>)
+                        })}
+                       {/* <SearchBar/>
+                        <CardGroup/>
+                        <div className="btn-group">
+                        </div>*/}
+                    </div>
+                    <div className="right">
+                        <Card data-testid="card"/>
+                    </div>
                 </div>
             </div>
     );

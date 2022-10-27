@@ -1,17 +1,14 @@
-import React from 'react';
-const Card = () => {
-
-    const a = async() =>{
-        try {
-            const response = await fetch("api/fruit/all",{method:"GET"});
-            const data = await response.json();
-            return data;
-        } catch (error) {
-            return error;
-        }
-    }
-
-return(<div>hola</div>);
-
+import React from 'react'
+import "./card.css";
+const Card = ({id, image, name, onClick}) => {
+    const style = "card-container";
+    return (
+        <div className={style} onClick={onClick}>
+            <img src={image} alt={name} />
+            <div className="number"><small>#0{id}</small></div>
+            <h3>{name}</h3>
+        </div>
+    )
 }
-export default Card;
+
+export default Card
