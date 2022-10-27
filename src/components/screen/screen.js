@@ -72,14 +72,14 @@ const Screen = () =>{
         const curOffset = currentOffset;
         setCurrentOffset(curOffset+4);
         const oldUrl = url;
-        setUrl("https://pokeapi.co/api/v2/pokemon/?limit=4&offset="+curOffset);
+        setUrl("https://pokeapi.co/api/v2/pokemon/?limit=4&offset="+(curOffset+4));
     }
 
     const subtractOffset = () => {
         const curOffset = currentOffset;
         setCurrentOffset(currentOffset-4);
         const oldUrl = url;
-        setUrl("https://pokeapi.co/api/v2/pokemon/?limit=4&offset="+curOffset);
+        setUrl("https://pokeapi.co/api/v2/pokemon/?limit=4&offset="+(curOffset-4));
     }
 
     const getFullElement = async() => {
@@ -116,25 +116,15 @@ const Screen = () =>{
                 <span className="title" >Listado de Pokemon</span>
                 <div className="container">
                     <div className="left">
-                        {/*{elementsFromCurrentUrl.map((elem) => {
-                            return(<p key={elem.name}>{elem.name}</p>)
-                        })}
-                        {elementsFromCurrentUrl.map((elem) => {
-                            return(<Card id={elem.id} name={elem.name} image={elem.sprites.other.dream_world.front_default}/>)
-                        })}*/}
                         <SearchBar/>
                         <CardGroup elems={elementsFromCurrentUrl}/>
-                       {/* <SearchBar/>
-                        <CardGroup/>
-                        <div className="btn-group">
-                        </div>*/}
                     </div>
                     <div className="right">
                         {Object.keys(completeElemForInfo).length !== 0 && <InfoCard element={completeElemForInfo}/>}
                     </div>
                 </div>
                 <div className="buttons">
-                    <div><button onClick={subtractOffset} className="buttonBackward"> Atrás</button></div>
+                    <div><button disabled={currentOffset===0} onClick={subtractOffset} className="buttonBackward"> Atrás</button></div>
                     <div><button onClick={addOffset} className="buttonForward">Siguiente</button></div>
                 </div>
                 </ParentContext.Provider>
