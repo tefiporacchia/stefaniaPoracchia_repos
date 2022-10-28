@@ -16,29 +16,9 @@ const Screen = () =>{
     const [elemForInfo, setElemForInfo] = useState("");
     const [completeElemForInfo, setCompleteElemForInfo] = useState({});
 
-    /*const getUrlElements = async () => {
-        const res=await axios.get(url);
-        getResults(res.data.results);
-    }*/
-
-    /*const getResults=async(res)=>{
-        console.log(res);
-        const items = [];
-
-        for(let item of res){
-            console.log(item.name)
-            const result = await axios.get(item.url);
-            items.push(result.data);
-        }
-        items.sort((a,b) => (a.name.localeCompare(b.name)));
-        setElementsFromCurrentUrl(items);
-
-    }*/
-
     const getUrlElements = async () => {
         try {
             const response = await fetch(url,{method:"GET"});
-            console.log(response)
             const data = await response.json();
             getResults(data.results);
         } catch (error) {
@@ -47,16 +27,13 @@ const Screen = () =>{
     }
 
     const getResults=async(res)=>{
-        console.log(res);
         const items = [];
         for(let item of res){
-            console.log(item.name)
             let result;
             try {
                 const response = await fetch(item.url,{method:"GET"});
                 const data = await response.json();
                 result = data;
-                console.log(result.sprites.other.dream_world.front_default)
             } catch (error) {
                 return error;
             }

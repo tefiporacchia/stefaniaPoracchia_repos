@@ -74,7 +74,6 @@ describe('Info Card Test', () => {
         expect(container.getElementsByClassName('picture-group').length).toBe(1);
         //tiene que haber 5 circles, no más
         expect(container.getElementsByClassName('circle').length).toBe(5);
-        console.log(container.getElementsByClassName('circle'))
         const img = screen.getAllByRole('img');
         //imagenes de los 5 circles
         expect(img[1]).toHaveAttribute('src', pokemon.sprites.back_default);

@@ -9,8 +9,6 @@ const Card = ({id, image, name}) => {
         setElemForInfo(name);
     };
 
-    console.log("number-"+id%4)
-
     const identifier = "card-container"+ " " + "number-"+id%4
     return (
         <div className={identifier} onClick={onClick}>
