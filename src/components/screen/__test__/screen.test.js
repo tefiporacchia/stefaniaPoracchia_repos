@@ -3,7 +3,7 @@ import React from 'react';
 import Screen from "../screen";
 import renderer from "react-test-renderer";
 
-describe('Main page mount', () => {
+describe('Screen Tests', () => {
 
     test('renders correctly', () => {
         const tree = renderer

@@ -3,7 +3,7 @@ import React from 'react';
 import SearchBar from "../searchBar";
 import userEvent from "@testing-library/user-event";
 
-describe('SearchBar', () => {
+describe('SearchBar Tests', () => {
 
     it("must exist", () => {
         const {container} = render(<SearchBar/>);

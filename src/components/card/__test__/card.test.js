@@ -3,7 +3,7 @@ import React from 'react';
 import Card from "../card";
 import renderer from "react-test-renderer";
 
-describe('Main page mount', () => {
+describe('Card Tests', () => {
 
     let pokemon;
 

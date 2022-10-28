@@ -2,7 +2,7 @@ import {render, screen, cleanup} from '@testing-library/react';
 import React from 'react';
 import PictureGroup from "../pictureGroup";
 
-describe('Main page mount', () => {
+describe('Picture Group Tests', () => {
 
     let pictures;
 

@@ -3,7 +3,7 @@ import React from 'react';
 import InfoCard from "../infoCard";
 
 
-describe('Info Card Test', () => {
+describe('Info Card Tests', () => {
 
     let pokemon;
 

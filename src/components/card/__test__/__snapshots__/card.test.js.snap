@@ -1,5 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Card Tests renders correctly 1`] = `
+<div
+  className="card-container number-3"
+  onClick={[Function]}
+>
+  <img
+    alt="charizard"
+    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/2.svg"
+  />
+  <div
+    className="number"
+  >
+    <small>
+      #0
+      3
+    </small>
+  </div>
+  <h3>
+    Charizard
+  </h3>
+</div>
+`;
+
 exports[`Main page mount renders correctly 1`] = `
 <div
   className="card-container number-3"
