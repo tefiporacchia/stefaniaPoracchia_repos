@@ -5,7 +5,7 @@ const CardGroup = ({elems}) => {
     return (
         <div className="card-group">
             {elems.map((elem) => {
-                return(<Card id={elem.id} image={elem.sprites.other.dream_world.front_default} name={elem.name}/>)
+                return(<Card id={elem.id} image={elem.sprites.other.dream_world.front_default} name={elem.name} key={elem.name}/>)
             })}
         </div>
     )

@@ -10,7 +10,7 @@ const InfoCard = ({element}) => {
     const img = element?.sprites?.other?.dream_world?.front_default;
 
     return (
-        <div className="info-card-container">
+        <div className="info-card-container" data-testid="info-card">
             <img src={img} alt={element.name} />
             <div className="number"><small>#0{element.id}</small></div>
             <h3>{toUppercase(element.name)}</h3>

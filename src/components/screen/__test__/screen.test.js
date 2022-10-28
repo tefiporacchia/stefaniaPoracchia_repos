@@ -1,50 +1,45 @@
 import {render, screen, cleanup} from '@testing-library/react';
 import React from 'react';
 import Screen from "../screen";
+import renderer from "react-test-renderer";
 
 describe('Main page mount', () => {
 
-    it("must display the main page title", () => {
-        render(<Screen/>);
-        expect(screen.getByText("Listado de Pokemon")).toBeInTheDocument()
+    test('renders correctly', () => {
+        const tree = renderer
+            .create(<Screen elems={cards}/>)
+            .toJSON();
+        expect(tree).toMatchSnapshot();
+    });
+
+    it("must show the screen", async () => {
+        await expect(screen.getByTestId("screen")).toBeInTheDocument();
     })
 
-    it("must have cards", () => {
+    it("must display the main page title", async () => {
         render(<Screen/>);
-        const card = screen.getByTestId('card');
-        expect(card).toBeInTheDocument()
+        await expect(screen.getByText("Listado de Pokemon")).toBeInTheDocument()
     })
 
-    it("must display a big card", () => {
-        render(<Screen/>);
-        const card = screen.getByTestId('card');
-        expect(card).toBeInTheDocument()
+    it("must have cards", async () => {
+        const {container} = render(<Screen/>);
+        await expect(container.getElementsByClassName('card-group').length).toBe(1);
     })
 
-    it("must have a search bar", () => {
-        render(<Screen/>);
-        const card = screen.getByTestId('card');
-        expect(card).toBeInTheDocument()
+    it("must display an information card", async () => {
+        const {container} = render(<Screen/>);
+        await expect(screen.getByTestId("info-card").length).toBe(1);
     })
 
-    it("has buttons", () => {
-        render(<Screen/>);
-        const card = screen.getByTestId('card');
-        expect(card).toBeInTheDocument()
+    it("must have a search bar", async () => {
+        const {container} = render(<Screen/>);
+        await expect(container.getElementsByClassName('input-field').length).toBe(1);
     })
 
-    it("must change cards with buttons", () => {
-        render(<Screen/>);
-        const card = screen.getByTestId('card');
-        expect(card).toBeInTheDocument()
+    it("has buttons", async () => {
+        const {container} = render(<Screen/>);
+        await expect(container.getElementsByClassName('buttons').length).toBe(1);
     })
-
-    it("Buttons make cards change", () => {
-        render(<Screen/>);
-        const card = screen.getByTestId('card');
-        expect(card).toBeInTheDocument()
-    })
-
 
 
 })

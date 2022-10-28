@@ -60,3 +60,46 @@
     }
   }
 }
+
+@media screen and (max-width: 480px) {
+  .left{
+    width:100% !important;
+  }
+  .card-group > div{
+    flex:50%;
+  }
+  .card-group{
+    display: flex;
+    width:100% !important;
+  }
+
+  .card-container{
+    width:100% !important;
+    flex-direction:row !important;
+  }
+
+  .search-bar{
+    width: 96% !important;
+    margin-left:0 !important;
+    margin-top: 4% !important;
+}
+
+  .container{
+    flex-direction: column-reverse !important;
+  }
+
+  .right{
+    width: 100% !important;
+  }
+
+  .screen{
+    margin-bottom: 2% !important;
+  }
+
+  .info-card-container{
+    width:90% !important;
+    padding-top: 2% !important;
+  }
+
+
+}
